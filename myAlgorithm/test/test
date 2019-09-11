@@ -1,0 +1,4 @@
+def test():
+    print 'hi'
+    return 2
+    print 'hello'
