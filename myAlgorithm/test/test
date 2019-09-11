@@ -9,6 +9,7 @@ def countMethods(n):
         i += 1
     return q
 
+
 def countMethod2(n):
     a, b, i = 0, 1, 0
     while i < n:
@@ -17,8 +18,18 @@ def countMethod2(n):
     return b
 
 
+def recursion(n):
+    if n == 0:
+        return 1
+    if n == 1:
+        return 1
+    return recursion(n-1) + recursion(n-2)
+
+
 if __name__ == '__main__':
     val = countMethods(6)
     print val
     val2 = countMethods(6)
     print val2
+    val3 = recursion(6)
+    print val3
