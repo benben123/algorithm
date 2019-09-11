@@ -1,4 +1,24 @@
-def test():
-    print 'hi'
-    return 2
-    print 'hello'
+def countMethods(n):
+    p = 1
+    q = 1
+    i = 2
+    while i <= n:
+        temp = q
+        q = q + p
+        p = temp
+        i += 1
+    return q
+
+def countMethod2(n):
+    a, b, i = 0, 1, 0
+    while i < n:
+        a, b = b, a + b
+        i + 1
+    return b
+
+
+if __name__ == '__main__':
+    val = countMethods(6)
+    print val
+    val2 = countMethods(6)
+    print val2
