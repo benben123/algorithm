@@ -33,7 +33,7 @@ def recursion(n):
 
 def dp(n):
     """
-    dynamic programming
+    dynamic programming, from bottom to top
     :param n:
     :return:
     """
@@ -44,6 +44,32 @@ def dp(n):
     return lst[n]
 
 
+def dpTopDown(n):
+    """
+    dynamic programming, from top to bottom
+    :param n:
+    :return:
+    """
+    result = [float('-inf')]*(n+1)
+    return dpTopDownSupport(n, result)
+
+
+def dpTopDownSupport(n, result):
+    if result[n] > 0:
+        return result[n]
+    if n == 0:
+        result[n] = 0
+        return result[n]
+    if n == 1:
+        result[n] = 1
+        return result[n]
+    if n == 2:
+        result[n] = 2
+        return result[n]
+    result[n] = dpTopDownSupport((n-1), result) + dpTopDownSupport((n-2), result)
+    return result[n]
+
+
 if __name__ == '__main__':
     # val = countMethods(6)
     # print val
@@ -51,5 +77,6 @@ if __name__ == '__main__':
     # print val2
     # val3 = recursion(6)
     # print val3
-    valdp = dp(6)
+    # valdp = dp(6)
+    valdp = dpTopDown(1)
     print valdp
