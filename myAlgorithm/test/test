@@ -14,11 +14,16 @@ def countMethod2(n):
     a, b, i = 0, 1, 0
     while i < n:
         a, b = b, a + b
-        i + 1
+        i += 1
     return b
 
 
 def recursion(n):
+    """
+    recursive method
+    :param n:
+    :return:
+    """
     if n == 0:
         return 1
     if n == 1:
@@ -26,10 +31,25 @@ def recursion(n):
     return recursion(n-1) + recursion(n-2)
 
 
+def dp(n):
+    """
+    dynamic programming
+    :param n:
+    :return:
+    """
+    lst = [0]*(n+1)
+    lst[0], lst[1] = 1, 1
+    for i in range(2,n+1):
+        lst[i] = lst[i-1] + lst[i-2]
+    return lst[n]
+
+
 if __name__ == '__main__':
-    val = countMethods(6)
-    print val
-    val2 = countMethods(6)
-    print val2
-    val3 = recursion(6)
-    print val3
+    # val = countMethods(6)
+    # print val
+    # val2 = countMethod2(6)
+    # print val2
+    # val3 = recursion(6)
+    # print val3
+    valdp = dp(6)
+    print valdp
