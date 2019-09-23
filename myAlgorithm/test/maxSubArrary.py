@@ -21,10 +21,7 @@ class Sol:
             global_max = max(global_max, local_max)
         return global_max
 
-""" 
-DP method
-f(n) = f(n-1) + a[i]
-""" 
+
     def getSubMax(self, nums):
         endingHere = nums[0]
         maxSoFar = nums[0]
@@ -34,11 +31,36 @@ f(n) = f(n-1) + a[i]
         return maxSoFar
 
 
+    def getMaxProduct(self, nums):
+        if len(nums) == 0:
+            return 0
+        minV, maxL, maxG = nums[0], nums[0], nums[0]
+        for i in range(1, len(nums)):
+            mn = minV
+            mx = maxL
+            maxL = max(nums[i], nums[i]*mx, nums[i]*mn)
+            minV = min(nums[i], nums[i]*mx, nums[i]*mn)
+            maxG = max(maxG, maxL)
+        return maxG
+
+
+    def getMaxProduct2(self, nums):
+        if len(nums) == 0:
+            return 0
+        minV, maxL, maxG = 1, 1, float('-inf')
+        for ele in nums:
+            minV, maxL = min(ele, ele*minV, ele*maxL), max(ele, ele*minV, ele*maxL)
+            maxG = max(maxG, maxL)
+        return maxG
+
 if __name__ == '__main__':
     lst = [2, 1, -3, 4, -1, 2, 1, -5, 4]
+    nums = [2, 3, -2, 4]
     test = Sol()
-    print test.maxSubArr(lst)
-    print test.findMaxSubArray(lst)
-    print test.getSubMax(lst)
+    # print test.maxSubArr(lst)
+    # print test.findMaxSubArray(lst)
+    # print test.getSubMax(lst)
+    print test.getMaxProduct(nums)
+    print test.getMaxProduct2(nums)
 
 
