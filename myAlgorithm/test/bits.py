@@ -6,7 +6,6 @@ class Bits:
         mask = left | right
         return (n & mask) | (m << i)
 
-
     def getDiff(self, val1, val2):
         c = val1 ^ val2
         count = 0
@@ -14,6 +13,7 @@ class Bits:
             count += c & 1
             c >>= 1
         return count
+
 
 if __name__ == "__main__":
     test = Bits()
