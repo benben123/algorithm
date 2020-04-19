@@ -40,10 +40,8 @@ class WoodCut:
             return end
         return 0
 
-
     def getPieces(self, nums, L):
         pieces = 0
         for ele in nums:
             pieces += ele/L
         return pieces
-
