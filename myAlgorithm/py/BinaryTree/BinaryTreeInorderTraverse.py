@@ -15,6 +15,18 @@ class InorderTras:
             root = root.right
         return res
 
+    def inorderTras2(self, root):
+        stack, res = [], []
+        while root or stack:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                root = stack.pop()
+                res.append(root.val)
+                root = root.right
+        return res
+
     def inorderTrasRecurs(self, root):
         self.res = []
         self.help(root)
@@ -35,6 +47,8 @@ if __name__ == "__main__":
     root.left.right = TreeNode(8)
     root.right.left = TreeNode(12)
     test = InorderTras().inorderTras(root)
+    test3 = InorderTras().inorderTras2(root)
     test2 = InorderTras().inorderTrasRecurs(root)
     print test
+    print test3
     print test2
