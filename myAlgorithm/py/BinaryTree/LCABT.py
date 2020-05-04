@@ -33,7 +33,7 @@ class Solution:
     def lowestCABT(self, root, A, B):
         if not root:
             return None
-        if root== A  or root == B:
+        if root == A or root == B:
             return root
         left = self.lowestCABT(root.left, A, B)
         right = self.lowestCABT(root.right, A, B)

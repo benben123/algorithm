@@ -7,4 +7,4 @@ class Solution:
             return True
         return root.val < high and root.val > low \
                and self.help(root.left, low, root.val) \
-               and self.help(root.right, root.val, hight)
+               and self.help(root.right, root.val, high)
