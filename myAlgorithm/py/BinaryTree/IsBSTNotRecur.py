@@ -30,7 +30,7 @@ class Solution:
             # the only difference compare to an inorder traversal iteration
             # this problem disallowed equal values so it's <= not <
             # Because inorder traverse BST must be ascending numbers, so the 'last_node' must be smaller than current stack[-1]
-            
+
             if stack:
                 if stack[-1].val <= last_node.val:
                     return False
