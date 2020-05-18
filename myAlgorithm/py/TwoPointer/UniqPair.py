@@ -16,4 +16,4 @@ class UniqPair:
                     left += 1
                 while left < right and lst[right] == lst[right + 1]:
                     right -= 1
-        return count 
+        return count
