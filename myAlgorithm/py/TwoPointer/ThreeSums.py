@@ -25,9 +25,9 @@ class ThreeSums(object):
 		length = len(nums)
 		for i in xrange(length-2): #[8]
 			if nums[i]>0: break #[7]
-			if i>0 and nums[i]==nums[i-1]: continue #[1]
+			if i>0 and nums[i]==nums[i-1]: continue #[1] Good way to clear the same value and important here
 
-			l, r = i+1, length-1 #[2]
+			l, r = i+1, length-1 #[2] tracking left as i+1, r as the last element of the array
 			while l<r:
 				total = nums[i]+nums[l]+nums[r]
 

@@ -1,4 +1,4 @@
-from myAlgorithm.py.ThreeSums import ThreeSums
+from myAlgorithm.py.TwoPointer.ThreeSums import ThreeSums
 
 if __name__ == "__main__":
     s = ThreeSums();
